@@ -7,20 +7,20 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Address implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 	private String street;
 	private String city;
-	private long id;
+	private Long id;
 
 	public Address() {
-		//super();
+		// super();
 		street = "Lindenstr. 14";
 		city = "München";
-		id=42;
-	}  
+		id = (long) 42;
+	}
 
-	public Address(long id) {
+	public Address(Long id) {
 		this();
 		this.id = id;
 	}
@@ -30,7 +30,7 @@ public class Address implements Serializable {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

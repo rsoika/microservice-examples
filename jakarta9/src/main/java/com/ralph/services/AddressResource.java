@@ -10,23 +10,20 @@ import java.util.logging.Logger;
 
 import com.ralph.data.Address;
 
-
-
 /**
  *
  * @author rsoika
  */
 @Path("data")
-@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 public class AddressResource {
-	 private static Logger logger = Logger.getLogger(AddressResource.class.getName());
+	private static Logger logger = Logger.getLogger(AddressResource.class.getName());
 
-
-    @GET
-    @Path("/address/{id}")
-    public Address getAddress(@PathParam("id") long id) {
-    	logger.info("...fetching address: " + id);
-        return new Address(id);
-    }
+	@GET
+	@Path("/address/{id}")
+	public Address getAddress(@PathParam("id") long id) {
+		logger.info("...fetching address: " + id);
+		return new Address(id);
+	}
 
 }

@@ -8,7 +8,6 @@
 		<module>jakarta8</module>
 		<module>jakarta9</module>
 		<module>springboot</module>
-
 	</modules>
 
 </project>
