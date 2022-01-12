@@ -1,2 +1,2 @@
 FROM jboss/wildfly:25.0.0.Final
-COPY ./target/micro-hello-world.war /opt/jboss/wildfly/standalone/deployments/
+COPY ./target/hello-world.war /opt/jboss/wildfly/standalone/deployments/

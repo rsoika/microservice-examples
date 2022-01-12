@@ -22,18 +22,18 @@
 			<version>8.0.0</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- swagger 
+		<!-- swagger -->
 		<dependency>
 			<groupId>org.microprofile-ext.openapi-ext</groupId>
 			<artifactId>openapi-ui</artifactId>
-			<version>1.1.3</version>
+			<version>1.1.5</version>
 		</dependency>
-		-->
+		
 		
 
 	</dependencies>
 	<build>
-		<finalName>micro-hello-world</finalName>
+		<finalName>hello-world</finalName>
 	</build>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
