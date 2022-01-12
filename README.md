@@ -1,2 +1,2 @@
 # microservice-examples
-Examples for microservice implementations based on different plattforms
+This is a collection of basic examples how to implement a microservice on different plattforms
