@@ -11,12 +11,28 @@ public class Address implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String street;
 	private String city;
+	private long id;
 
 	public Address() {
 		//super();
 		street = "Lindenstr. 14";
 		city = "München";
+		id=42;
 	}  
+
+	public Address(long id) {
+		this();
+		this.id = id;
+	}
+
+	@XmlElement
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	@XmlElement
 	public String getStreet() {
