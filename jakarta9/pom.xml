@@ -2,11 +2,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.rsoika.microservices</groupId>
-		<artifactId>hello-world</artifactId>
+		<groupId>com.rsoika</groupId>
+		<artifactId>ralphs-microservices</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	
+
 	<artifactId>hello-world-jakarta9</artifactId>
 
 	<packaging>war</packaging>
