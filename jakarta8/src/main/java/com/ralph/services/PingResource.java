@@ -12,7 +12,7 @@ public class PingResource {
 
     @GET
     public String ping() {
-        return "Ping " + System.currentTimeMillis();
+    	return "Ping Jakarta8 "+System.currentTimeMillis();
     }
 
 }
