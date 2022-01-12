@@ -1,15 +1,15 @@
 # Hello World Example on Jakarta EE 9
 
 This is a basic Microservice example running on Jakarta 9. It includes a Rest Service example and also a Health Service.
-
+The project runs with JDK 11.
 
 ## Build
 
-To build the project run
+The project is based on Docker. To build the project you can run:
 
 	$./buildAndRun.sh
 
-This will rund a Maven build, creating a new Docker image and starting the server
+This will run a Maven build, creating a new Docker image and starting the server
 
 To manually build and run you can run the following commands:
 
