@@ -51,3 +51,29 @@ Based on Jakarta EE 9 and Microprofile 3 the Microservice also provides an examp
 	http://localhost:8080/health
 	
 	
+# Maven Archetype
+
+You can also generate a Maven Archetype out from this project to be used to create custom projects:
+
+
+	$ mvn archetype:create-from-project
+
+This will generate a new archetype from the current project.
+Next navigate to target\generated-sources\archetype and run:
+
+	$ mvn install archetype:update-local-catalog
+
+	
+Now the new archetype is installed locally. You can create a new project now with:
+
+	$ cd my-project-folder	
+	$ mvn archetype:generate -DarchetypeCatalog=local
+
+Choose the number of your generated project.
+
+Or run:
+
+	$  mvn archetype:generate -DarchetypeCatalog=local -DarchetypeGroupId=com.rsoika  -DarchetypeArtifactId=hello-world-jakarta9-archetype
+
+
+	
