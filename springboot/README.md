@@ -28,4 +28,10 @@ returns a Address Java Object. The object can be requested in JSON or XML
 	
 
 
+### Swagger	
+
+The Microservice also includes a Swagger UI based on [springdoc](https://springdoc.org/).
+
+	http://localhost:8080/swagger-ui/index.html
+	
 

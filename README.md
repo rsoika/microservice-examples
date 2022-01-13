@@ -34,6 +34,13 @@ The Address resource is an example how to deal with POJOs in a Rest API method.
 
 The Service creates a simple Address Java Object and returns the object data requested in JSON or XML
 
+## Swagger API
+
+All implementations include a Swagger OpenAPI documentation accessible from your web browser. The the project details how to access the Swagger API for different platforms. 
+
+<img src="./doc/images/swagger_ui.png" />
+
+
 ## Logging
 
 All implementations use the standard java logger `java.util.logging.Logger` to print log messages to the server log file. So there is not extra logging framework needed.
