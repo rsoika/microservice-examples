@@ -14,19 +14,17 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
  */
 @Path("ping")
 public class PingResource {
-	private static Logger logger = Logger.getLogger(AddressResource.class.getName());
+	private static Logger logger = Logger.getLogger(PingResource.class.getName());
 
 	@Inject
-	@ConfigProperty(name = "client.password", defaultValue = "xxxx")
-	private String env_password;
+	@ConfigProperty(name = "mail.host", defaultValue = "xxxx")
+	private String mail_host;
 	
-	@Inject
-	@ConfigProperty(name = "mp.openapi.servers", defaultValue = "none")
-	private String openapi_servers;
+
 	
 	@GET
 	public String ping() {
-		logger.info("env client.password=" + env_password + " , mp.openapi.servers=" + openapi_servers);
+		logger.info("...ping.... env mail.host=" + mail_host );
 		return "Ping Jakarta8 " + System.currentTimeMillis();
 	}
 

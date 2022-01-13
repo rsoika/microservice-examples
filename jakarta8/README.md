@@ -31,9 +31,10 @@ The Microservice proivdes 2 simple Rest API endpoints:
 returns just a string with a timestamp
 
 
-	http://localhost:8080/api/data/address
+	http://localhost:8080/api/data/address/123
 
 returns a Address Java Object. The object can be requested in JSON or XML
+	
 	
 
 ### Swagger	

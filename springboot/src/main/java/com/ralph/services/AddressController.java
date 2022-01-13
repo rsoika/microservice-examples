@@ -13,7 +13,7 @@ import com.ralph.data.Address;
 * @author rsoika
 */
 @RestController
-@RequestMapping(value = "api", produces = { "application/json", "application/xml", "text/xml" })
+@RequestMapping(value = "api/data", produces = { "application/json", "application/xml", "text/xml" })
 public class AddressController {
 	private static Logger logger = Logger.getLogger(AddressController.class.getName());
 
