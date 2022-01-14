@@ -24,7 +24,7 @@ public class PingResource {
 	public String ping() {
 		logger.info("...ping.... env mail.host=" + mail_host);
 
-		return "Ping Jakarta9 " + System.currentTimeMillis();
+		return "Ping JakartaEE 9 " + System.currentTimeMillis();
 	}
 
 }
