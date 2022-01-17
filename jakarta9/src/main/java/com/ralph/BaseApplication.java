@@ -1,12 +1,12 @@
 package com.ralph;
 
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.core.Application;
-
 import org.eclipse.microprofile.openapi.annotations.OpenAPIDefinition;
 import org.eclipse.microprofile.openapi.annotations.info.Contact;
 import org.eclipse.microprofile.openapi.annotations.info.Info;
 import org.eclipse.microprofile.openapi.annotations.servers.Server;
+
+import jakarta.ws.rs.ApplicationPath;
+import jakarta.ws.rs.core.Application;
 
 /**
  * The Application class configures a JAX-RS endpoint.
@@ -14,7 +14,6 @@ import org.eclipse.microprofile.openapi.annotations.servers.Server;
  * @author ralph.soika@imixs.com
  * 
  */
-@ApplicationPath("api")
 @OpenAPIDefinition(info = @Info(
         title = "Example application", 
         version = "1.0.0", 
@@ -27,6 +26,7 @@ import org.eclipse.microprofile.openapi.annotations.servers.Server;
             @Server(url = "/",description = "localhost")
         }
 )
+@ApplicationPath("api")
 public class BaseApplication extends Application {
 
 }
