@@ -1,2 +1,2 @@
-FROM payara/micro:5.2021.10
+FROM payara/micro:5.2021.10-jdk11
 COPY ./target/*.war ${DEPLOY_DIR}

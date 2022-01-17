@@ -1,7 +1,8 @@
 # Hello World Example on Jakarta EE 9
 
 This is a basic Microservice example running on Jakarta 9. It includes a Rest Service example and also a Health Service.
-The project runs with JDK 11.
+The project runs with JDK 11. In a Jakarta EE 9 application the new namespace `jakarta.*` is used.
+
 
 ## Build
 
@@ -49,6 +50,10 @@ The Microservice also includes a Swagger UI.
 Based on Jakarta EE 9 and Microprofile 3 the Microservice also provides an example Healthcheck endpoint:
 
 	http://localhost:8080/health
+
+or 
+
+	http://localhost:9990/health
 	
 	
 # Maven Archetype
