@@ -82,4 +82,26 @@ Learn more about the [Microprofile Config API](https://microprofile.io/project/e
 
 
 
+# Build your own Project with a Maven Archetype
+
+You can generate a Maven Archetype out from this project to be used to create a custom project:
+
+	$ mvn archetype:create-from-project
+
+This will generate a new archetype from the current project.
+Next navigate to target\generated-sources\archetype and run:
+
+	$ mvn install archetype:update-local-catalog
+
+Now the new archetype is installed locally. You can create a new project now with:
+
+	$ cd my-project-folder	
+	$ mvn archetype:generate -DarchetypeCatalog=local
+
+Choose the number of your generated project.
+
+Or run:
+
+	$  mvn archetype:generate -DarchetypeCatalog=local -DarchetypeGroupId=com.rsoika  -DarchetypeArtifactId=hello-world-jakarta9-archetype
+
 	
