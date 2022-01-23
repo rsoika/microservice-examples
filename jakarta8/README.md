@@ -1,7 +1,7 @@
 # Hello World Example on Jakarta EE 8
 
 This is a basic Microservice example running on Jakarta EE 8. It includes a Rest Service example and also a Health Service.
-The project runs with JDK 11. In a Jakarta EE 8 application the namespace `javax.*` is still used instead of `jakarta.*`.
+The project runs with JDK 11. **Note:** In Jakarta EE 8 your application uses the namespace `javax.*` instead of `jakarta.*` which will be used in Verison 9 and later.
 
 
 ## Build
@@ -44,7 +44,7 @@ The Service creates a simple Address Java Object and returns the object data req
 
 ### Swagger	
 
-The Microservice also includes a Swagger UI.
+The Microservice also includes a Swagger UI, so you can test your services from your Web Browser:
 
 	http://localhost:8080/api/openapi-ui/
 	
@@ -54,11 +54,11 @@ The Microservice also includes a Swagger UI.
 
 ## Logging
 
-All implementations use the standard java logger `java.util.logging.Logger` to print log messages to the server log file. So there is not extra logging framework needed.
+The project uses the standard java logger `java.util.logging.Logger` to print log messages to the server log file. So there is not extra logging framework needed.
 	
 ## Health 
 
-Based on Jakarta EE 9 and Microprofile 3 the Microservice also provides an example Healthcheck endpoint:
+A Healthcheck Service endpoint allows you to monitor the status of your application. Based on Jakarta EE 8 and [Eclipse Microprofile](https://microprofile.io/) the Microservice provides an example Healthcheck endpoint:
 
 On Wildfly (default): 
 
