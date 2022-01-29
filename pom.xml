@@ -9,6 +9,7 @@
 		<module>jakarta9</module>
 		<module>springboot</module>
 		<module>webservice</module>
+		<module>hello-world-scheduler</module>
 	</modules>
 
 </project>
