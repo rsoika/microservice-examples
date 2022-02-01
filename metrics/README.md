@@ -52,6 +52,62 @@ The Microservice also includes a Swagger UI, so you can test your services from 
 <img src="./doc/images/swagger_ui.png" />	
 
 
+## MetricService
+
+The MetricService is collecting the metric data based on a CDI Event called `APIEvent` 
+
+	@Named
+	public class APIEvent {
+	    public static final String ON_SAVE = "save";
+	    public static final String ON_LOAD = "load";
+	    public static final String ON_DELETE = "delete";
+	
+	    private String eventType;
+	    private NobelPrize data;
+	
+	    public APIEvent(NobelPrize data, String eventType) {
+	        this.eventType = eventType;
+	        this.data = data;
+	    }
+	    ....
+	}
+
+Each time data is requested via the GET /api/data/nobelprize/{id} the resource sends the event:
+
+    @GET
+    @Path("/nobelprize/{id}")
+    public NobelPrize getPrice(@PathParam("id") long id) {
+        logger.info("...fetching: " + id);
+        
+        // fire an api event...
+        NobelPrize data = app.getData().get(id);
+        if (apiEvents != null) {
+            apiEvents.fire(new APIEvent(data, APIEvent.ON_LOAD));
+        } else {
+            logger.warning("Missing CDI support for Event<APIEvent> !");
+        }
+        return data;
+    }
+
+The `MetricService` is now creating a so called `Counter` metric which is consumed by the Prometheus Server:
+
+
+    @Inject
+    protected Event<APIEvent> apiEvents;
+    
+    @GET
+    @Path("/nobelprize/{id}")
+    public NobelPrize getPrice(@PathParam("id") long id) {
+        // fire an api event...
+        NobelPrize data = app.getData().get(id);
+        if (apiEvents != null) {
+            apiEvents.fire(new APIEvent(data, APIEvent.ON_LOAD));
+        } else {
+            logger.warning("Missing CDI support for Event<APIEvent> !");
+        }
+        return data;
+    }
+
 
 ## Monitoring
 
