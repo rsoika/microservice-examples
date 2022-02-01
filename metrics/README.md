@@ -1,45 +1,45 @@
-# Hello World Example on Jakarta EE 8
+# Metrics Example on Jakarta EE 8
 
-This is a basic Microservice example running on Jakarta EE 8. It includes a Rest Service example and also a Health Service.
-The project runs with JDK 11. **Note:** In Jakarta EE 8 your application uses the namespace `javax.*` instead of `jakarta.*` which will be used in Verison 9 and later.
+This is a Microservice example running on Jakarta EE 8 in combination with the Microprofile Metrics API. 
+Metrics 4.0 gives you a great way to monitor your runntime and your application.  Microprofile Metrics API is collecting custom metrics and provides them in the common prometheus format. This makes it easy to visualize and monitor any kind of application parameters. Also it allows you to setup a alerting with the help of Grafana in just a view minutes
 
 
 ## Build
 
 The project is based on Docker. To build the project you can run:
 
-	$./buildAndRun.sh
+	$./build.sh
 
-This will run a Maven build, creating a new Docker image and starting the server
+This will run a Maven build, creating a new Docker image. To start the microservice use Docker-Compose. The provided docker-compose.yaml file will start the microservice and also a Prometheus and Grafana Servier to monitor the results.
 
-To manually build and run you can run the following commands:
-
-
-	$ mvn clean package && docker build -t com.ralph.microprofile/hello-world .
-	$ docker run -d -p 8080:8080 --name hello-world com.ralph.microprofile/hello-world 
-	
+	$ docker-compose up	
 
 
 	
 ## The Rest API
 
-The Microservice proivdes 2 simple Rest API endpoints:
+The Microservice contains a simple Rest API endpoint providing Nobel Price winners of 2021:
 
-### The Ping Service
+### The nobelprice Service
 
-The Ping resource just returns a ping message with a timestamp:
+The `nobelprize` resource returns a list of all data stored in the example database:
 
-	http://localhost:8080/api/ping
+	http://localhost:8080/api/data/nobelprize/
+
+Each nobelPrize has an id (1 - 11). You can GET one price holder by its id:
+
+	http://localhost:8080/api/data/nobelprize/1
+
+returns:
+
+	{
+	  "name": "Klaus Hasselmann",
+	  "year": 2021,
+	  "category": "Physics",
+	  "id": 1
+	}	
 
 
-### The Address Service
-
-The Address resource is an example how to deal with POJOs in a Rest API method.
-
-	http://localhost:8080/api/data/address/123
-
-The Service creates a simple Address Java Object and returns the object data requested in JSON or XML
-	
 	
 
 ### Swagger	
@@ -50,6 +50,39 @@ The Microservice also includes a Swagger UI, so you can test your services from 
 	
 
 <img src="../doc/images/swagger_ui.png" />	
+
+
+
+## Monitoring
+
+The docker-compose file starts beside the microservice also a prometheus server to collect the metric data and a grafana server to visualize the data. You can access the Grafana Server form your web browser by the URL:
+
+	http://localhost:3000/
+
+On your first access you can choose your personal new admin password:
+
+
+<img src="../doc/images/grafana-login.png" />	
+
+In the next step you need to define the datasource from where Grafana can retrieve the metric data. 
+
+	
+	http://prometheus:9090
+
+
+<img src="../doc/images/grafana-datasource.png" />
+
+
+Finally you can import the example Dashboard located under `/docker/prometheus/my-dashboard.json` and create a new Dashboard:
+
+<img src="../doc/images/grafana-dashboard.png" />
+
+Just past the data form the .json file.
+
+Finally you can monitor your Microservice:
+
+
+<img src="../doc/images/grafana-example.png" />
 
 
 ## Logging
