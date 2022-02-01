@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 2,
   "links": [],
   "panels": [
     {
@@ -617,5 +617,5 @@
   "timezone": "",
   "title": "My Dashboard",
   "uid": "cpBnKUb7k",
-  "version": 3
+  "version": 1
 }
