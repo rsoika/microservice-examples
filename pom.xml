@@ -10,6 +10,7 @@
 		<module>springboot</module>
 		<module>webservice</module>
 		<module>scheduler</module>
+		<module>metrics</module>
 	</modules>
 
 </project>
