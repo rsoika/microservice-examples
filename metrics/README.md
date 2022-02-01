@@ -49,7 +49,7 @@ The Microservice also includes a Swagger UI, so you can test your services from 
 	http://localhost:8080/api/openapi-ui/
 	
 
-<img src="../doc/images/swagger_ui.png" />	
+<img src="./doc/images/swagger_ui.png" />	
 
 
 
@@ -70,19 +70,19 @@ In the next step you need to define the datasource from where Grafana can retrie
 	http://prometheus:9090
 
 
-<img src="../doc/images/grafana-datasource.png" />
+<img src="./doc/images/grafana-datasource.png" />
 
 
 Finally you can import the example Dashboard located under `/docker/prometheus/my-dashboard.json` and create a new Dashboard:
 
-<img src="../doc/images/grafana-dashboard.png" />
+<img src="./doc/images/grafana-dashboard.png" />
 
 Just past the data form the .json file.
 
 Finally you can monitor your Microservice:
 
 
-<img src="../doc/images/grafana-example.png" />
+<img src="./doc/images/grafana-example.png" />
 
 
 ## Logging
