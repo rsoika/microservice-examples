@@ -74,9 +74,6 @@ public class MetricService {
     private static Logger logger = Logger.getLogger(MetricService.class.getName());
 
     
-    public void test() {
-        logger.info("..test");
-    }
     /**
      * ProcessingEvent listener to generate a metric.
      * 
@@ -99,20 +96,17 @@ public class MetricService {
 
     /**
      * This method builds a Microprofile Metric for a Counter. The metric contains
-     * the tag 'method' and category.
+     * the tags 'method' and 'category' which are generated form the APIEvent.
      * 
      * @return Counter metric
      */
     private Counter buildMetric(APIEvent event) {
-
         // Constructs a Metadata object
         Metadata metadata = Metadata.builder().withName(METRIC_DATA).withDescription("Nobel Prize Event count")
                 .withType(MetricType.COUNTER).build();
-
         List<Tag> tags = new ArrayList<Tag>();
         tags.add(new Tag("method", event.getEventType()));
         tags.add(new Tag("category", event.getData().getCategory()));
-
         Counter counter = metricRegistry.counter(metadata, tags.toArray(new Tag[tags.size()]));
 
         return counter;
