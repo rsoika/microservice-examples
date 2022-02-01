@@ -62,7 +62,7 @@ The docker-compose file starts beside the microservice also a prometheus server 
 On your first access you can choose your personal new admin password:
 
 
-<img src="../doc/images/grafana-login.png" />	
+<img src="./doc/images/grafana-login.png" />	
 
 In the next step you need to define the datasource from where Grafana can retrieve the metric data. 
 
